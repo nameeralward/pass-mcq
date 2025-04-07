@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="passMCQ - Support">
+    <meta name="description" content="PassMCQ - Support">
     <title>passMCQ - Support</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -11,6 +11,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="keywords" content="PEBC MCQ, PEBC Qualifying Examination, pharmacy exam preparation, Canadian pharmacy licensure, MCQ practice questions, pharmacy board exam, PEBC study guide, pharmacy licensing Canada, pharmacist MCQ questions, PEBC Part 1 preparation">
+    <meta name="author" content="passMCQ Team">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
     <div class="top-bar">
@@ -24,14 +27,24 @@
                 <img src="university-logo.png" alt="University Logo" class="university-logo">
                 <div class="site-title">
                     <h1 class="site-name">passMCQ</h1>
-                    <span class="site-description">Your trusted partner for exam preparation.</span>
+                    <span class="site-description">Your trusted partner for PEBC Qualifying Examination Part 1 preparation.</span>
                 </div>
             </div>
+            
+            <!-- Hamburger menu for mobile -->
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
+            
             <nav>
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
+                <a href="pebc-mcq-guide.html">PEBC MCQ Guide</a>
                 <a href="subscription.html">Subscription</a>
                 <a href="support.html">Support</a>
                 <a href="faq.html">FAQ</a>
+                <a href="blog-index.html">Blog</a>
                 <a href="about.html">About Us</a>
                 <div class="dropdown">
                     <a href="#">Policies</a>
@@ -42,6 +55,55 @@
                     </div>
                 </div>
             </nav>
+        </div>
+        
+        <!-- Mobile navigation -->
+        <div class="mobile-nav">
+            <div class="mobile-nav-header">
+                <div class="logo-container">
+                    <img src="university-logo.png" alt="University Logo" class="university-logo" width="40" height="40">
+                    <h2 class="site-name">passMCQ</h2>
+                </div>
+                <button class="mobile-nav-close" aria-label="Close navigation menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-nav-menu">
+                <div class="mobile-nav-item">
+                    <a href="/">Home</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="pebc-mcq-guide.html">PEBC MCQ Guide</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="subscription.html">Subscription</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="support.html">Support</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="faq.html">FAQ</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="blog-index.html">Blog</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="about.html">About Us</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <div class="mobile-nav-dropdown">
+                        <a href="#">Policies</a>
+                        <button class="mobile-dropdown-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="mobile-nav-submenu">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="device-switching.html">Device Switching</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -84,8 +146,10 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="pebc-mcq-guide.html">PEBC MCQ Guide</a></li>
                     <li><a href="subscription.html">Subscription</a></li>
+                    <li><a href="blog-index.html">Blog</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-service.html">Terms of Service</a></li>
                 </ul>
@@ -101,5 +165,6 @@
             © 2025 passMCQ. All rights reserved. passMCQ is not affiliated with the Pharmacy Examining Board of Canada. "PEBC" and "Pharmacy Examining Board of Canada" are trademarks of the Pharmacy Examining Board of Canada.
         </div>
     </footer>
+    <script src="mobile-nav.js"></script>
 </body>
 </html> 
