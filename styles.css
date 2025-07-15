@@ -119,6 +119,23 @@ nav a:hover, .dropdown > a:hover {
     transform: translateY(-2px);
 }
 
+.questions-portal-btn {
+    background: var(--cta-color) !important;
+    color: white !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    margin-left: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.questions-portal-btn:hover {
+    background: #E88C86 !important; /* Darker shade of coral-pink */
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(241, 156, 150, 0.3) !important;
+}
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
