@@ -296,9 +296,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    main {
+        padding: 0 1rem; /* Reduce from 2rem to 1rem for more text space */
+        margin: 1rem auto; /* Reduce top/bottom margin slightly */
+    }
+
     header .header-content {
         flex-direction: column;
-        padding: 1rem;
+        padding: 0.75rem; /* Reduce from 1rem to 0.75rem for consistency */
     }
     
     nav {
@@ -380,11 +385,11 @@ footer {
     .feature-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 1rem;
+        padding: 0.5rem; /* Reduce from 1rem to 0.5rem for more text space */
     }
 
     .feature-card {
-        padding: 1.5rem;
+        padding: 1.25rem; /* Slightly reduce from 1.5rem to 1.25rem */
     }
 
     .carousel-section {
@@ -423,7 +428,7 @@ footer {
     .footer-content {
         flex-direction: column;
         gap: 2rem;
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.75rem; /* Reduce horizontal padding from 1rem to 0.75rem */
     }
 
     .footer-section {
@@ -453,7 +458,7 @@ footer {
     }
 
     .policy-section {
-        padding: 1rem;
+        padding: 0.75rem; /* Reduce from 1rem to 0.75rem for more text space */
     }
 
     .support-email {
@@ -461,7 +466,7 @@ footer {
     }
 
     .content-block {
-        padding: 1rem;
+        padding: 0.5rem; /* Reduce from 1rem to 0.5rem for more text space */
     }
 
     h2 {
@@ -470,7 +475,7 @@ footer {
     }
 
     .breadcrumb {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.75rem; /* Reduce horizontal padding for consistency */
         font-size: 0.9rem;
     }
 
@@ -478,7 +483,7 @@ footer {
     .mobile-app-prompt {
         display: block;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.5rem; /* Reduce horizontal padding from 1rem to 0.5rem */
         background: var(--card-bg);
         border-radius: var(--border-radius);
         margin: 2rem 0;
@@ -498,6 +503,26 @@ footer {
 
 /* Additional adjustments for very small screens */
 @media (max-width: 380px) {
+    main {
+        padding: 0 0.75rem; /* Further reduce padding for very small screens */
+    }
+    
+    .policy-section {
+        padding: 0.5rem; /* Further reduce for very small screens */
+    }
+    
+    .content-block {
+        padding: 0.25rem; /* Minimal padding for very small screens */
+    }
+    
+    header .header-content {
+        padding: 0.5rem; /* Reduce header padding for very small screens */
+    }
+    
+    .footer-content {
+        padding: 1rem 0.5rem; /* Further reduce footer padding */
+    }
+    
     .site-name {
         font-size: 1.5rem;
     }
@@ -1995,4 +2020,114 @@ footer {
 
 .mobile-nav-mcq-link:hover i {
     color: var(--accent-color);
+}
+
+/* Promotion Styling - Matching passEE design exactly */
+.promotion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-items: start;
+}
+
+.promotion-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(6, 17, 72, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.promotion-card.active {
+    border-color: var(--cta-color);
+    box-shadow: 0 8px 25px rgba(241, 156, 150, 0.15);
+}
+
+.promotion-card.upcoming {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(133, 92, 166, 0.15);
+}
+
+.promotion-card.expired {
+    opacity: 0.6;
+    border-color: #ccc;
+}
+
+.promotion-badge-bundle {
+    display: flex;
+    gap: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.promotion-badge {
+    background: var(--cta-color);
+    color: #fff;
+    padding: 0.28em 0.95em;
+    border: 2px solid rgba(241, 156, 150, 0.6);
+    border-radius: 10px 0 0 0;
+    position: relative;
+    z-index: 3;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 0.93em;
+}
+
+.promotion-badge.new {
+    background: #28a745;
+    color: #fff;
+    border: 2px solid #90ee90;
+}
+
+.promotion-card.upcoming .promotion-badge {
+    background: var(--accent-color);
+    border-color: rgba(133, 92, 166, 0.6);
+}
+
+.promotion-card.expired .promotion-badge,
+.promotion-badge.expired {
+    background: #DC3545;
+    color: #fff;
+    border: 2px solid #fdc6cb;
+}
+
+.promotion-card h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-accent);
+}
+
+.promotion-details {
+    margin-top: 1rem;
+}
+
+.promotion-details p {
+    margin: 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.promotion-date {
+    font-style: italic;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .promotion-grid {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+    
+    .promotion-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
 }
