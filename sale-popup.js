@@ -4,7 +4,7 @@
  * TO ENABLE/DISABLE THE POPUP:
  * Set SALE_POPUP_ENABLED to true to show the popup, false to hide it
  */
-const SALE_POPUP_ENABLED = true; // Change this to false to disable the popup
+const SALE_POPUP_ENABLED = false; // Change this to false to disable the popup
 
 // Configuration
 const POPUP_MINIMIZED_KEY = 'passMCQ_sale_popup_minimized';
