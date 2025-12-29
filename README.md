@@ -47,6 +47,6 @@ To run locally:
 
 ## Legal
 
-© 2025 passMCQ. All rights reserved. 
+© 2026 passMCQ. All rights reserved. 
 passMCQ is not affiliated with the Pharmacy Examining Board of Canada. 
 "PEBC" and "Pharmacy Examining Board of Canada" are trademarks of the Pharmacy Examining Board of Canada.

@@ -5,6 +5,7 @@
     --accent-color: #855CA6;      /* royal-purple - accents and highlights */
     --dark-accent: #061148;       /* penn-blue - for text */
     --cta-color: #F19C96;         /* coral-pink - for call-to-action buttons */
+    --cta-hover: #FFB366;         /* orange - for hover states */
     
     /* UI colors with better contrast */
     --background: #FFFFFF;
@@ -52,6 +53,8 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 12px rgba(6, 17, 72, 0.2);
+    width: 100%; /* Ensure header extends full width */
+    overflow: hidden; /* Prevent content from breaking out */
 }
 
 /* Fix navigation wrapping */
@@ -59,16 +62,21 @@ header .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem; /* Reduce padding to give more space */
     flex-wrap: nowrap; /* Prevent wrapping */
     max-width: 1400px; /* Increase max width to accommodate all items */
     margin: 0 auto;
+    gap: 2rem; /* Add gap between logo and nav for better spacing */
+    width: 100%; /* Ensure content area uses full available width */
+    box-sizing: border-box;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    min-width: 0; /* Allow flex shrinking if absolutely necessary */
 }
 
 .university-logo {
@@ -91,16 +99,22 @@ h1.site-name {
 
 .site-description {
     color: var(--primary-color);
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.9rem; /* Slightly smaller to accommodate longer French text */
+    font-weight: 200;
+    width: 240px;
+    line-height: 1.2;
+    white-space: normal;
+    flex-shrink: 0; /* Prevent description from shrinking */
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 1.2rem; /* Reduce gap between nav items */
+    gap: 0.6rem; /* Reduce gap to accommodate longer French text */
     flex-wrap: nowrap; /* Prevent wrapping */
     white-space: nowrap; /* Prevent text wrapping within nav items */
+    flex-shrink: 1; /* Allow nav to shrink if needed */
+    min-width: 0; /* Allow flex items to shrink below content size */
 }
 
 nav a, .dropdown > a {
@@ -108,9 +122,14 @@ nav a, .dropdown > a {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 0.95rem; /* Slightly reduce font size */
-    padding: 0.5rem 0.7rem; /* Add padding for better touch targets */
+    font-size: 0.85rem; /* Slightly smaller to accommodate longer French text */
+    padding: 0.5rem 0.4rem; /* Reduce horizontal padding */
     border-radius: var(--border-radius);
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent individual nav items from shrinking */
+    max-width: 120px; /* Limit max width to prevent excessive expansion */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis if text is too long */
 }
 
 nav a:hover, .dropdown > a:hover {
@@ -119,17 +138,22 @@ nav a:hover, .dropdown > a:hover {
     transform: translateY(-2px);
 }
 
-.questions-portal-btn {
+.questions-portal-btn,
+.portal-btn {
     background: var(--cta-color) !important;
     color: white !important;
-    padding: 0.6rem 1.2rem !important;
+    padding: 0.5rem 0.8rem !important; /* Reduce padding for longer text */
     border-radius: 6px !important;
     font-weight: 600 !important;
-    margin-left: 1rem !important;
+    font-size: 0.8rem !important; /* Slightly smaller for longer French text */
+    margin-left: 0.5rem !important;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    white-space: nowrap !important; /* Prevent text wrapping */
     transition: all 0.3s ease !important;
 }
 
-.questions-portal-btn:hover {
+.questions-portal-btn:hover,
+.portal-btn:hover {
     background: #E88C86 !important; /* Darker shade of coral-pink */
     color: white !important;
     transform: translateY(-2px) !important;
@@ -278,6 +302,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -1622,6 +1647,34 @@ footer {
     color: #3498db;
 }
 
+/* Remove border from portal item to make it look like a button, not a list item */
+.mobile-nav-portal-item {
+    border-bottom: none !important;
+}
+
+.mobile-nav-portal-link {
+    background: var(--accent-color);
+    color: white !important;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: calc(100% - 2rem);
+    border: none;
+}
+
+.mobile-nav-portal-link i {
+    color: white !important;
+}
+
+.mobile-nav-portal-link:hover {
+    background: var(--cta-hover);
+    transform: translateY(-1px);
+}
+
 .mobile-nav-dropdown {
     display: flex;
     justify-content: space-between;
@@ -2129,5 +2182,155 @@ footer {
     .promotion-card {
         padding: 1.5rem;
         max-width: 100%;
+    }
+}
+
+/* App Store Buttons Styles */
+.app-store-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-store-buttons .cta-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow);
+    flex: 1 1 auto;
+    min-width: 240px;
+    max-width: 320px;
+    min-height: 80px;
+    border: 2px solid transparent;
+}
+
+.app-store-buttons .cta-button i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.app-store-buttons .cta-button span {
+    color: var(--text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Apple App Store buttons */
+.app-store-buttons .cta-button[href*="apps.apple.com"] {
+    background: #f5f5f5;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+}
+
+.app-store-buttons .cta-button[href*="apps.apple.com"]:hover {
+    background: #e8e8e8;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.app-store-buttons .cta-button[href*="apps.apple.com"] i {
+    color: #000000;
+}
+
+/* Google Play Store buttons */
+.app-store-buttons .cta-button[href*="play.google.com"] {
+    background: #e8f0fe;
+    border-color: rgba(66, 133, 244, 0.3);
+    color: var(--text-primary);
+}
+
+.app-store-buttons .cta-button[href*="play.google.com"]:hover {
+    background: #d2e3fc;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.2);
+}
+
+.app-store-buttons .cta-button[href*="play.google.com"] i {
+    color: #4285F4;
+}
+
+/* Web app buttons */
+.app-store-buttons .cta-button[href*="app.pass-mcq.ca"] {
+    background: #E8D5F2;
+    border-color: rgba(133, 92, 166, 0.3);
+    color: var(--text-primary);
+}
+
+.app-store-buttons .cta-button[href*="app.pass-mcq.ca"]:hover {
+    background: #D4B8E5;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(133, 92, 166, 0.2);
+}
+
+.app-store-buttons .cta-button[href*="app.pass-mcq.ca"] i {
+    color: var(--accent-color);
+}
+
+/* When app-store-buttons is inside FAQ items on desktop, break out of faq-item padding */
+.faq-item .app-store-buttons,
+.faq-answer .app-store-buttons {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .app-store-buttons {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* When app-store-buttons is inside content-block, break out of content-block padding to match free-trial spacing */
+    .content-block .app-store-buttons,
+    .cta-button-container.app-store-buttons {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    /* When app-store-buttons is inside FAQ items, break out of faq-item padding */
+    .faq-item .app-store-buttons,
+    .faq-answer .app-store-buttons {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .app-store-buttons .cta-button {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 0.75rem 1rem;
+        min-height: 60px;
+        justify-content: center;
+    }
+    
+    .app-store-buttons .cta-button i {
+        font-size: 1.4rem;
+    }
+    
+    .app-store-buttons .cta-button span {
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 }
