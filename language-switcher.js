@@ -207,6 +207,26 @@
     }
 
     /**
+     * Create floating news button linking to latest updates
+     */
+    function createFloatingNewsButton() {
+        if (document.querySelector('.floating-news-button')) {
+            return;
+        }
+
+        const button = document.createElement('a');
+        button.href = 'news.html';
+        button.className = 'floating-news-button notranslate';
+        button.setAttribute('aria-label', 'View latest passMCQ news and updates');
+        button.innerHTML = `
+            <span class="floating-news-icon"><i class="fas fa-file-alt"></i></span>
+            <span class="floating-news-label">Latest News</span>
+        `;
+
+        document.body.appendChild(button);
+    }
+
+    /**
      * Insert language switcher into mobile navigation menu
      */
     function insertMobileLanguageSwitcher() {
@@ -329,6 +349,7 @@
         // Insert language switcher IMMEDIATELY - don't wait for anything
         // This ensures the button is always visible from the start
         insertLanguageSwitcher();
+        createFloatingNewsButton();
 
         // Prevent passMCQ from being translated
         preventPassMCQTranslation();

@@ -251,6 +251,70 @@ footer {
     border-top: 3px solid var(--accent-color);
 }
 
+.floating-news-button {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 160px;
+    padding: 18px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    line-height: 1.35;
+    border: 2px solid rgba(133, 92, 166, 0.8);
+    box-shadow: 0 18px 32px rgba(6, 17, 72, 0.25);
+    z-index: 1100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.floating-news-button .floating-news-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-news-button .floating-news-icon i {
+    color: white;
+    font-size: 1.35rem;
+}
+
+.floating-news-button .floating-news-label {
+    font-size: 0.95rem;
+    color: white;
+}
+
+.floating-news-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 40px rgba(6, 17, 72, 0.3);
+    border-color: rgba(133, 92, 166, 0.95);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+
+@media (max-width: 768px) {
+    .floating-news-button {
+        bottom: 16px;
+        left: 16px;
+        width: 150px;
+        padding: 16px 18px;
+        border-radius: 20px;
+    }
+
+    .floating-news-button .floating-news-icon i {
+        font-size: 1.2rem;
+    }
+
+    .floating-news-button .floating-news-label {
+        font-size: 0.9rem;
+    }
+}
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
