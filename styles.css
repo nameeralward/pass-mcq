@@ -29,11 +29,16 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 100%; /* Ensures consistent base sizing */
+}
+
 body {
     font-family: var(--font-primary);
     background: var(--background);
     color: var(--text-primary);
     line-height: var(--line-height-body);
+    font-size: 16px; /* Explicit base font size */
 }
 
 .top-bar {
