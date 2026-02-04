@@ -14,7 +14,7 @@ passMCQ's website serves as an informational platform for our iOS app, providing
 ## Contact
 
 For support or inquiries:
-- Email: support@npd-pass.com
+- Email: support.mcq@pass-mcq.ca
 - Website: https://pass-mcq.ca
 
 ## Technical Details
