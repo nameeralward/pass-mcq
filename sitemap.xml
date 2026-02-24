@@ -152,15 +152,21 @@
   </url>
   <url>
     <loc>https://pass-mcq.ca/news.html</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pass-mcq.ca/news-app-updated.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://pass-mcq.ca/news-blueprint-update.html</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://pass-mcq.ca/news-version-2.html</loc>
