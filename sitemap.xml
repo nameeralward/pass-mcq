@@ -152,8 +152,14 @@
   </url>
   <url>
     <loc>https://pass-mcq.ca/news.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pass-mcq.ca/news-800-questions.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
