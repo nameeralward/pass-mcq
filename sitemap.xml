@@ -145,6 +145,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://pass-mcq.ca/blog-after-ee.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pass-mcq.ca/blog-osce-overview.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pass-mcq.ca/blog-simulated-exam.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pass-mcq.ca/francophones.html</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
