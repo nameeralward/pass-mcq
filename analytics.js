@@ -1,8 +1,9 @@
-// Google Analytics
+// Google Analytics 4 + Google Ads (same gtag.js loader)
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-9S9X5WLE2B');
+gtag('config', 'AW-10849141246');
 
 // Custom event tracking
 document.addEventListener('DOMContentLoaded', function() {
