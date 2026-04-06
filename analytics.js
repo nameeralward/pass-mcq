@@ -1,9 +1,8 @@
-// Google Analytics 4 + Google Ads (same gtag.js loader)
+// Google Analytics
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-9S9X5WLE2B');
-gtag('config', 'AW-10849141246');
 
 document.addEventListener('DOMContentLoaded', function() {
   // CTA buttons (App Store / Play / Web often use .cta-button or .platform-button)
