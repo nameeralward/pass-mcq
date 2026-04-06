@@ -5,65 +5,59 @@ gtag('js', new Date());
 gtag('config', 'G-9S9X5WLE2B');
 gtag('config', 'AW-10849141246');
 
-// Custom event tracking
 document.addEventListener('DOMContentLoaded', function() {
-  // Track CTA button clicks
-  const ctaButtons = document.querySelectorAll('.cta-button');
-  ctaButtons.forEach(button => {
+  // CTA buttons (App Store / Play / Web often use .cta-button or .platform-button)
+  document.querySelectorAll('.cta-button, .platform-button').forEach(function(button) {
     button.addEventListener('click', function() {
-      gtag('event', 'click', {
-        'event_category': 'engagement',
-        'event_label': this.textContent.trim()
-      });
-      console.log('CTA button click tracked:', this.textContent.trim());
+      if (typeof gtag === 'function') {
+        gtag('event', 'click', {
+          event_category: 'engagement',
+          event_label: this.textContent.trim()
+        });
+      }
     });
   });
-  
-  // Track App Store links with more detailed information
-  const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
-  appStoreLinks.forEach(link => {
+
+  // App Store, Google Play, and web app portal — same event name site-wide for GA4/Ads
+  var appLinkSelector = 'a[href*="apps.apple.com"], a[href*="play.google.com"], a[href*="app.pass-mcq.ca"]';
+  document.querySelectorAll(appLinkSelector).forEach(function(link) {
     link.addEventListener('click', function() {
-      // Get the page location and link context
-      const pagePath = window.location.pathname;
-      const linkLocation = this.closest('section')?.querySelector('h2, h3')?.textContent || 'Unknown section';
-      const linkText = this.textContent.trim();
-      
-      gtag('event', 'app_store_click', {
-        'event_category': 'conversion',
-        'event_label': linkText || 'App Store Download',
-        'page_path': pagePath,
-        'link_context': linkLocation
-      });
-      
-      console.log('App Store link click tracked:', {
-        text: linkText,
-        page: pagePath,
-        section: linkLocation
+      if (typeof gtag !== 'function') return;
+      var el = this;
+      var pagePath = window.location.pathname;
+      var section = el.closest('section');
+      var heading = section ? section.querySelector('h2, h3') : null;
+      var linkLocation = heading ? heading.textContent.trim() : 'Unknown section';
+      var linkText = el.textContent.trim();
+      gtag('event', 'app_download_click', {
+        event_category: 'conversion',
+        event_label: linkText || 'App Download',
+        page_path: pagePath,
+        link_context: linkLocation
       });
     });
   });
-  
-  // Track navigation menu clicks
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
+
+  document.querySelectorAll('nav a').forEach(function(link) {
     link.addEventListener('click', function() {
-      gtag('event', 'navigation', {
-        'event_category': 'engagement',
-        'event_label': this.textContent.trim()
-      });
-      console.log('Navigation click tracked:', this.textContent.trim());
+      if (typeof gtag === 'function') {
+        gtag('event', 'navigation', {
+          event_category: 'engagement',
+          event_label: this.textContent.trim()
+        });
+      }
     });
   });
-  
-  // Track floating MCQ button clicks
-  const mcqButton = document.querySelector('.floating-mcq-button');
+
+  var mcqButton = document.querySelector('.floating-mcq-button');
   if (mcqButton) {
     mcqButton.addEventListener('click', function() {
-      gtag('event', 'click', {
-        'event_category': 'conversion',
-        'event_label': 'passMCQ Button'
-      });
-      console.log('passMCQ button click tracked');
+      if (typeof gtag === 'function') {
+        gtag('event', 'click', {
+          event_category: 'conversion',
+          event_label: 'passMCQ Button'
+        });
+      }
     });
   }
-}); 
+});

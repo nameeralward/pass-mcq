@@ -170,51 +170,7 @@
       
       console.log('Enhanced passMCQ Analytics configured with comprehensive tracking');
     </script>
-    
-    <!-- Custom event tracking -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Track CTA button clicks
-        const ctaButtons = document.querySelectorAll('.cta-button');
-        ctaButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            gtag('event', 'click', {
-              'event_category': 'engagement',
-              'event_label': this.textContent.trim()
-            });
-          });
-        });
-        
-        // Track App Store links with more detailed information
-        const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"], a[href*="app.pass-mcq.ca"]');
-        appStoreLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            const pagePath = window.location.pathname;
-            const linkLocation = this.closest('section')?.querySelector('h2, h3')?.textContent || 'Unknown section';
-            const linkText = this.textContent.trim();
-            
-            gtag('event', 'app_download_click', {
-              'event_category': 'conversion',
-              'event_label': linkText || 'App Download',
-              'page_path': pagePath,
-              'link_context': linkLocation
-            });
-          });
-        });
-        
-        // Track navigation menu clicks
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            gtag('event', 'navigation', {
-              'event_category': 'engagement',
-              'event_label': this.textContent.trim()
-            });
-          });
-        });
-      });
-    </script>
-    
+    <script src="analytics.js"></script>
     <!-- Language Switcher -->
     <script src="language-switcher.js" defer></script>
     
